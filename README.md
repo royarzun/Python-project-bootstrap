@@ -1,20 +1,11 @@
-# NAIADS standard Services
+# Python Project Bootstrap
 
-Collection of standard python services for the NASA/NAIADS project using the
-ClaRA Framework.
-
-## Services
-
--   `naiads.services.root.Histogram1dWriterService`
--   `naiads.services.root.Histogram2dWriterService`
--   `naiads.services.root.Profile1dWriterService`
--   `naiads.services.root.Profile2dWriterService`
+Start your new python project with a ready to install directory and scripts structure.
 
 
 ## Requirements
 
-* Clara for Python >= 2.0
-* PyROOT
+* Jinja 1.2
 
 ## Installation
 
