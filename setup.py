@@ -4,7 +4,7 @@
 import os
 import sys
 
-from distutils.core import setup, Command
+from setuptools import setup, Command
 from setuptools.command.test import test as TestCommand
 from setuptools import find_packages
 
