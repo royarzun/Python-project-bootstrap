@@ -1,6 +1,11 @@
 # coding=utf-8
 
-from python_bootstrap.utils.SystemUtils import create_folder
+from python_bootstrap.utils.SystemUtils import create_folder,\
+    create_file_from_template, make_executable
+
+TEMPLATE_SETUP = "python_setup.txt"
+TEMPLATE_CLASS = "python_class.txt"
+TEMPLATE_TESTS = "python_test.txt"
 
 
 class PythonProject(object):
@@ -24,7 +29,13 @@ class PythonProject(object):
         create_folder(self._test_package)
 
     def _create_project_setup(self):
-        pass
+        setup_file_path = self._root_folder + "/setup.py"
+
+        # Create setup.py
+        create_file_from_template(setup_file_path,
+                                  TEMPLATE_SETUP,
+                                  project_name=self.project_name)
+        make_executable(setup_file_path)
 
     def _create_project_tests(self):
         pass

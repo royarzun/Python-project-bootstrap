@@ -25,7 +25,7 @@ class TestPythonProjectGenerator(unittest.TestCase):
         # self.assertTrue(os.path.isfile(project_name + "/README.md"))
         # self.assertTrue(os.path.isfile(project_name + "/LICENSE"))
         # self.assertTrue(os.path.isfile(project_name + "/.gitignore"))
-        # self.assertTrue(os.path.isfile(project_name + "/setup.py"))
+        self.assertTrue(os.path.isfile(project_name + "/setup.py"))
         # self.assertTrue(os.path.isfile(src_file_path + "__init__.py"))
         # self.assertTrue(os.path.isfile(test_file_path + "__init__.py"))
         # self.assertTrue(os.path.isfile(src_file_path +
