@@ -1,0 +1,12 @@
+# coding=utf-8
+
+from unittest import TestCase
+
+
+class Test{{project_name}}(TestCase):
+
+    def setUp(self):
+        pass
+
+    def test_execute(self):
+        pass

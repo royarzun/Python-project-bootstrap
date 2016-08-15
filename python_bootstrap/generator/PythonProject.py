@@ -17,7 +17,7 @@ class PythonProject(object):
         self.project_name = project_name
         self._root_folder = project_name
         self._main_package = project_name + "/" + project_name
-        self._test_package = project_name + "/tests/"
+        self._test_package = project_name + "/tests"
         pass
 
     def _create_directories(self):
@@ -32,6 +32,9 @@ class PythonProject(object):
         create_file_from_template(self._main_package + "/__init__.py",
                                   TEMPLATE_INIT, author=get_username())
         create_folder(self._test_package)
+        create_file_from_template(self._main_package + "/" +
+                                  self.project_name + ".py",
+                                  TEMPLATE_CLASS)
 
         create_file_from_template(self._test_package + "/__init__.py",
                                   TEMPLATE_INIT, author=get_username())
@@ -45,14 +48,16 @@ class PythonProject(object):
     def _create_project_setup(self):
         setup_file_path = self._root_folder + "/setup.py"
 
-        # Create setup.py
         create_file_from_template(setup_file_path,
                                   TEMPLATE_SETUP,
                                   project_name=self.project_name)
         make_executable(setup_file_path)
 
     def _create_project_tests(self):
-        pass
+        create_file_from_template(self._test_package + "/test_" +
+                                  self.project_name + ".py",
+                                  TEMPLATE_TESTS,
+                                  project_name=self.project_name)
 
     def create(self):
         self._create_directories()
