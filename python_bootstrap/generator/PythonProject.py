@@ -63,3 +63,12 @@ class PythonProject(object):
         self._create_directories()
         self._create_project_setup()
         self._create_project_tests()
+
+
+def main(args):
+    project = PythonProject(args)
+    project.create()
+
+if __name__ == "__main__":
+    import sys
+    main(sys.argv[1:])

@@ -77,5 +77,6 @@ if __name__ == "__main__":
               'Programming Language :: Python',
               'Programming Language :: Python :: 2.6',
               'Programming Language :: Python :: 2.7',
-          )
+          ),
+          scripts=["python_bootstrap/scripts/python_project"]
     )
