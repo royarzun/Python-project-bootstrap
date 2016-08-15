@@ -1,0 +1,79 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+import os
+import sys
+
+from setuptools import setup, Command
+from setuptools.command.test import test as TestCommand
+from setuptools import find_packages
+
+import {{project_name}}
+
+
+class {{project_name}}Test(TestCommand):
+    user_options = [('pytest-args=', 'a', "Arguments to pass into py.test")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = []
+
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+
+        errno = pytest.main(self.pytest_args)
+        sys.exit(errno)
+
+
+class {{project_name}}Clean(Command):
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        os.system('rm -vrf ./.cache ./.eggs ./build ./dist')
+        os.system('rm -vrf ./*.tgz ./*.egg-info')
+        os.system('find . -name "*.pyc" -exec rm -vrf {} \;')
+        os.system('find . -name "__pycache__" -exec rm -rf {} \;')
+
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme_file:
+    README = readme_file.read()
+
+with open(os.path.join(os.path.dirname(__file__), 'LICENSE')) as license_file:
+    LICENSE = license_file.read()
+
+if __name__ == "__main__":
+    setup(name='{{project_name}}',
+          version={{project_name}}.__version__,
+          description="[SOME DESCRIPTION HERE]",
+          author='[THE AUTHOR]',
+          author_email="YOUR EMAIL",
+          license=LICENSE,
+          long_description=README,
+          test_suite="tests",
+          tests_require=['pytest'],
+          cmdclass={
+              'test': {{project_name}}Test,
+              'clean': {{project_name}}Clean,
+          },
+          packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*"]),
+          package_dir={"{{project_name}}": "{{project_name}}"},
+          classifiers=(
+              'Development Status :: 2 - Pre-Alpha',
+              'Environment:: Console',
+              'Intended Audience :: Developers',
+              'Natural Language :: English',
+              'License :: OSI Approved :: MIT License',
+              'Programming Language :: Python',
+              'Programming Language :: Python :: 2.7',
+          )
+    )

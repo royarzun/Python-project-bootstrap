@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ "$1" = "-h" -o "$1" = "-help" ]; then
+    echo "Python Project Bootstrap v0.1 - Create a new python project with just the right structure"
+    echo "usage: python_project <PROJECT_NAME>"
+fi
+
+proj_name=$1
+
+if ! $(python -c 'import python_bootstrap.generator.PythonProject' &> /dev/null);
+    then
+        echo "Please check that Clara and its dependencies are installed in your system or virtual environment";
+    else
+        python -c "from python_bootstrap.generator.PythonProject import main; main(\"$proj_name\")"
+fi

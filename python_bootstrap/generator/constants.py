@@ -1,3 +1,19 @@
+# coding=utf-8
+
+README = """
+# PROJECT NAME
+
+## Requirements
+
+## How to Contribute
+
+"""
+
+LICENSE = """
+PLACE YOUR CHOSEN LIBRARY HERE!
+"""
+
+GITIGNORE = """
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -88,5 +104,7 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# IDEs
+# PyCharm project settings
 .idea
+
+"""
