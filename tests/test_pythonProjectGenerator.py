@@ -22,12 +22,12 @@ class TestPythonProjectGenerator(unittest.TestCase):
         self.assertTrue(os.path.isdir(project_name))
         self.assertTrue(os.path.isdir(src_file_path))
         self.assertTrue(os.path.isdir(test_file_path))
-        # self.assertTrue(os.path.isfile(project_name + "/README.md"))
-        # self.assertTrue(os.path.isfile(project_name + "/LICENSE"))
-        # self.assertTrue(os.path.isfile(project_name + "/.gitignore"))
+        self.assertTrue(os.path.isfile(project_name + "/README.md"))
+        self.assertTrue(os.path.isfile(project_name + "/LICENSE"))
+        self.assertTrue(os.path.isfile(project_name + "/.gitignore"))
         self.assertTrue(os.path.isfile(project_name + "/setup.py"))
-        # self.assertTrue(os.path.isfile(src_file_path + "__init__.py"))
-        # self.assertTrue(os.path.isfile(test_file_path + "__init__.py"))
+        self.assertTrue(os.path.isfile(src_file_path + "__init__.py"))
+        self.assertTrue(os.path.isfile(test_file_path + "__init__.py"))
         # self.assertTrue(os.path.isfile(src_file_path +
         #                                "TEST_PROJECTService.py"))
         # self.assertTrue(os.path.isfile(test_file_path +

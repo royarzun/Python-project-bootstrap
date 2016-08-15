@@ -1,7 +1,9 @@
 # coding=utf-8
 
+from python_bootstrap.generator.constants import README, LICENSE, GITIGNORE
 from python_bootstrap.utils.SystemUtils import create_folder,\
-    create_file_from_template, make_executable, get_username
+    create_file_from_template, create_file_from_string,\
+    make_executable, get_username
 
 TEMPLATE_SETUP = "python_setup.txt"
 TEMPLATE_CLASS = "python_class.txt"
@@ -33,6 +35,12 @@ class PythonProject(object):
 
         create_file_from_template(self._test_package + "/__init__.py",
                                   TEMPLATE_INIT, author=get_username())
+        self.__create_base_statics()
+
+    def __create_base_statics(self):
+        create_file_from_string(self._root_folder + "/README.md", README)
+        create_file_from_string(self._root_folder + "/LICENSE", LICENSE)
+        create_file_from_string(self._root_folder + "/.gitignore", GITIGNORE)
 
     def _create_project_setup(self):
         setup_file_path = self._root_folder + "/setup.py"
