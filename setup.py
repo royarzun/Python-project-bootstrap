@@ -52,12 +52,13 @@ with open(os.path.join(os.path.dirname(__file__), 'LICENSE')) as license_file:
     LICENSE = license_file.read()
 
 if __name__ == "__main__":
-    setup(name='python-project-bootstrap',
+    setup(name="python-project-bootstrap",
           version=python_bootstrap.__version__,
           description="Start your new python project with a ready to install"
                       "directory and scripts structure",
-          author='Ricardo Oyarzun',
+          author="Ricardo Oyarzun",
           author_email="royarzun@gmail.com",
+          url="https://github.com/royarzun/Python-project-bootstrap",
           license=LICENSE,
           long_description=README,
           test_suite="tests",
@@ -70,7 +71,7 @@ if __name__ == "__main__":
           package_dir={"python-bootstrap": "python-bootstrap"},
           classifiers=(
               'Development Status :: 5 - Production/Stable',
-              'Environment:: Console',
+              'Environment :: Console',
               'Intended Audience :: Developers',
               'Natural Language :: English',
               'License :: OSI Approved :: MIT License',
