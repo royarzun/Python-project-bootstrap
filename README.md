@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/python-project-bootstrap.svg)](https://badge.fury.io/py/python-project-bootstrap)
+
 # Python Project Bootstrap
 
 Start your new python project with a ready to install directory and scripts structure.
