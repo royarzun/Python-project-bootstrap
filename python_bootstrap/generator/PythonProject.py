@@ -65,10 +65,16 @@ class PythonProject(object):
         self._create_project_tests()
 
 
-def main(args):
-    project = PythonProject(args)
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_name",
+                        help="Project name for your python project", type=str)
+    args = parser.parse_args()
+
+    project = PythonProject(args.project_name)
     project.create()
 
 if __name__ == "__main__":
-    import sys
-    main(sys.argv[1:])
+    main()
