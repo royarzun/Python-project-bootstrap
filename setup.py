@@ -45,7 +45,7 @@ class BootstrapClean(Command):
         os.system('find . -name "*.pyc" -exec rm -vrf {} \;')
         os.system('find . -name "__pycache__" -exec rm -rf {} \;')
 
-with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme_file:
+with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme_file:
     README = readme_file.read()
 
 with open(os.path.join(os.path.dirname(__file__), 'LICENSE')) as license_file:
