@@ -67,6 +67,7 @@ if __name__ == "__main__":
               'test': BootstrapTest,
               'clean': BootstrapClean,
           },
+          include_package_data=True,
           packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*"]),
           package_dir={"python-bootstrap": "python-bootstrap"},
           classifiers=(

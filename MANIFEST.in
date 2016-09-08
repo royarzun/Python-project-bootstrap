@@ -1,0 +1,3 @@
+include LICENSE
+include README.rst
+include python_bootstrap/res/templates/*.txt
