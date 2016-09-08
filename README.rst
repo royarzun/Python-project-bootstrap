@@ -3,8 +3,7 @@
 Python Project Bootstrap
 ========================
 
-Start your new python project with a ready to install directory and
-scripts structure.
+Start your new python project with a ready to install directory and scripts structure.
 
 Requirements
 ------------
@@ -14,8 +13,7 @@ Requirements
 Installation
 ------------
 
-To install the services just run the setup.py script with the install
-argument
+To install the services just run the setup.py script with the install argument
 
 .. code:: sh
 
